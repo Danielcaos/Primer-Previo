@@ -38,7 +38,7 @@
                     <a class="nav-link" href="#" style="color: white;">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;">Contacto</a>
+                    <a onclick="loadC()" class="nav-link" href="#" style="color: white;">Contacto</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -55,6 +55,8 @@
     </nav>
     <img src="https://www.casio-intl.com/media/latin_es/wat/for_gift/007_mainImage.jpg" class="img-fluid"
         alt="Responsive image" style="width: 100%;">
+    <br>
+    <br>
     <div class="container" id="contenedor">
         <div class="card-group">
             <div class="card">
@@ -125,7 +127,7 @@
                 </div>
             </div>
     </div>
-
+    <br>
             <img src="https://concepto.de/wp-content/uploads/2014/01/compra-e1551731934405.jpg" class="img-fluid"
         alt="Responsive image" style="width: 100%;">
 
@@ -151,6 +153,19 @@
           xhttp.send();
         }
       </script>
+
+<script type="text/javascript">
+    function loadC() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("contenedor").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "contacto.html", true);
+      xhttp.send();
+    }
+  </script>
 
 </body>
 
