@@ -23,7 +23,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand" href="#" style="color: white;">Obsequiarte</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">Obsequiarte</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                     <a class="nav-link" href="#" style="color: white;">Quienes Somos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: white;">Productos</a>
+                    <a class="nav-link" href="index.html" style="color: white;">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a onclick="loadC()" class="nav-link" href="#" style="color: white;">Contacto</a>
@@ -66,7 +66,7 @@
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                         additional content. This content is a little bit longer.</p>
                         <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir Al Carro</a>
-                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
+                        <a onclick="loadP()" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
                 </div>
             </div>
             <div class="card">
@@ -76,7 +76,7 @@
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
                     </p>
                     <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir Al Carro</a>
-                    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
+                    <a onclick="loadP()" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
                 </div>
             </div>
             <div class="card">
@@ -87,7 +87,7 @@
                         additional content. This card has even longer content than the first to show that equal height
                         action.</p>
                         <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir Al Carro</a>
-                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
+                        <a onclick="loadP()" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
                             <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir Al Carro</a>
-                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
+                        <a onclick="loadP()" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
                     </div>
                 </div>
                 <div class="card">
@@ -111,7 +111,7 @@
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional
                             content.</p>
                             <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir Al Carro</a>
-                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
+                        <a onclick="loadP()" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
                     </div>
                 </div>
                 <div class="card">
@@ -122,7 +122,7 @@
                             additional content. This card has even longer content than the first to show that equal
                             height action.</p>
                             <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Añadir Al Carro</a>
-                        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
+                        <a onclick="loadP()" href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Mas</a>
                     </div>
                 </div>
             </div>
@@ -131,15 +131,9 @@
             <img src="https://concepto.de/wp-content/uploads/2014/01/compra-e1551731934405.jpg" class="img-fluid"
         alt="Responsive image" style="width: 100%;">
 
-    <footer class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 50px;">
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-3"><p style="color: white;">Contactos</p></div>
-            <div class="col-md-3 col-sm-6 col-xs-3"><a href="" style="color: white;"><p>UFPS</p></a></div>
-            <div class="col-md-3 col-sm-6 col-xs-3"><a href="" style="color: white;">COMERCIO</a></div>
-            <div class="col-md-3 col-sm-6 col-xs-3"><a href="" style="color: white;"><p>MINTIC</p></a></div>
-        </div>
-        
-    </footer>
+        <footer class="card-footer footer-separacion" style="background-color: lightblue;">
+            <p style="color: white">Contactos: </p>
+          </footer>
 
     <script type="text/javascript">
         function loadR() {
@@ -163,6 +157,19 @@
         }
       };
       xhttp.open("GET", "contacto.html", true);
+      xhttp.send();
+    }
+  </script>
+
+<script type="text/javascript">
+    function loadP() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("contenedor").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "producto.html", true);
       xhttp.send();
     }
   </script>
